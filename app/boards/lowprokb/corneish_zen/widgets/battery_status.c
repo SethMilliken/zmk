@@ -44,13 +44,13 @@ static void set_battery_symbol(lv_obj_t *icon, struct battery_status_state state
     uint8_t level = state.level;
 
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
-    if (level > 95) {
+    if (level > 87) {
         lv_image_set_src(icon, state.usb_present ? &batt_100_chg : &batt_100);
-    } else if (level > 74) {
+    } else if (level > 62) {
         lv_image_set_src(icon, state.usb_present ? &batt_75_chg : &batt_75);
-    } else if (level > 49) {
+    } else if (level > 37) {
         lv_image_set_src(icon, state.usb_present ? &batt_50_chg : &batt_50);
-    } else if (level > 24) {
+    } else if (level > 12) {
         lv_image_set_src(icon, state.usb_present ? &batt_25_chg : &batt_25);
     } else if (level > 5) {
         lv_image_set_src(icon, state.usb_present ? &batt_5_chg : &batt_5);
