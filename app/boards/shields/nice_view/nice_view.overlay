@@ -13,6 +13,9 @@
         reg = <0>;
         width = <160>;
         height = <68>;
+
+        power-domain = <&core_power_domain>;
+        zephyr,pm-device-runtime-auto;
     };
 };
 
