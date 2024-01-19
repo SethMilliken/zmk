@@ -77,6 +77,7 @@ static struct zmk_behavior_binding
 #endif /* ZMK_KEYMAP_HAS_SENSORS */
 
 static inline int set_layer_state(uint8_t layer, bool state, bool momentary) {
+    int ret = 0;
     if (layer >= ZMK_KEYMAP_LAYERS_LEN) {
         return -EINVAL;
     }
