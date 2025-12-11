@@ -27,6 +27,15 @@ static void set_layer_symbol(lv_obj_t *label, struct layer_status_state state) {
     const char *layer_label = state.label;
     zmk_keymap_layer_index_t active_layer_index = state.index;
 
+#if IS_ENABLED(CONFIG_ZMK_DISPLAY_HIDE_MOMENTARY_LAYERS)
+    static uint8_t last_locked_index = 255;
+    if (!zmk_keymap_layer_locked(active_layer_index) || last_locked_index == active_layer_index) {
+        return;
+    } else {
+        last_locked_index = active_layer_index;
+    }
+#endif
+
     if (layer_label == NULL || strlen(layer_label) == 0) {
         char text[6] = {};
 
