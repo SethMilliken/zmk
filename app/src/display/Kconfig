@@ -30,7 +30,7 @@ choice LV_TXT_ENC
 endchoice
 
 config LV_Z_MEM_POOL_SIZE
-    default 4096 if ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
+    default 4608 if ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
 
 choice ZMK_DISPLAY_STATUS_SCREEN
     prompt "Default status screen for displays"
